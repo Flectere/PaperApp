@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="27958fd3f612480494b74b1655d777b7" Name="Diagram1">
+        <EntityTypeShape EntityType="PaperDatabaseModel.Agent" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.CreateProduct" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.Employee" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.Material" Width="1.5" PointX="6" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.MaterialProduct" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.Product" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.Provide" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.Provider" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.Purchase" Width="1.5" PointX="8.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.Role" Width="1.5" PointX="8.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.Specialization" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.TypeAgent" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.TypeMaterial" Width="1.5" PointX="3.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.TypeProduct" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.Unit" Width="1.5" PointX="3.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.User" Width="1.5" PointX="11" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaperDatabaseModel.WorkShop" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Agent_TypeAgent" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Purchase_Agent" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_CreateProduct_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_CreateProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_CreateProduct_WorkShop" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Employee_Specialization" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Material_TypeMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Material_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_MaterialProduct_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Provide_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_MaterialProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Product_TypeProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Purchase_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Provide_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_Provider_TypeAgent" ManuallyRouted="false" />
+        <AssociationConnector Association="PaperDatabaseModel.FK_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
