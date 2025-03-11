@@ -23,5 +23,15 @@ namespace PaperApp.Models
                 return materialsString;
             }
         }
+        public string Color
+        {
+            get
+            {
+                List<Purchase> aboba = App.db.Purchase.Where(x => x.IdProduct == ID).ToList();
+                if (aboba.Count() != 0)
+                    return "Gray";
+                return "IndianRed";
+            }
+        }
     }
 }

@@ -60,11 +60,11 @@ namespace PaperApp.Pages
             //Сделать 1 список и его менять + добавить страницы листалку
             if (SortCb.SelectedIndex == 0)
             {
-                ProductLv.ItemsSource = App.db.Product.Where(x => x.Name.StartsWith(SearchTb.Text)).ToList();
+                ProductLv.ItemsSource = App.db.Product.Where(x => x.Name.Contains(SearchTb.Text)).ToList();
                 return;
             }
             TypeProduct selType = SortCb.SelectedItem as TypeProduct;
-            ProductLv.ItemsSource = App.db.Product.Where(x => x.Name.StartsWith(SearchTb.Text) && x.IdType == selType.ID).ToList();
+            ProductLv.ItemsSource = App.db.Product.Where(x => x.Name.Contains(SearchTb.Text) && x.IdType == selType.ID).ToList();
         }
 
         private void SortCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -83,7 +83,6 @@ namespace PaperApp.Pages
         }
         void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            //Проверить
             if (!char.IsDigit(e.Text, 0))
             {
                 e.Handled = true;
@@ -96,6 +95,9 @@ namespace PaperApp.Pages
             }
         }
 
-        
+        private void addBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddProductPage());
+        }
     }
 }

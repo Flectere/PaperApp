@@ -32,6 +32,9 @@ namespace PaperApp.Pages
             ProductionPersonCountTbx.Text = App.selectedProduct.CountPeople.ToString();
             ProductionWorkshopNumberTbx.Text = App.selectedProduct.Workshop.ToString();
             MinCostForAgentTbx.Text = App.selectedProduct.MinCost.ToString();
+            ProductTypeCbx.ItemsSource = App.db.TypeProduct.ToList();
+            ProductTypeCbx.SelectedItem = App.selectedProduct.TypeProduct;
+            MaterialLv.ItemsSource = App.db.MaterialProduct.Where(x => x.IdProduct == App.selectedProduct.ID).ToList();
         }
 
         private void EditPhotoBtn_Click(object sender, RoutedEventArgs e)
@@ -57,7 +60,44 @@ namespace PaperApp.Pages
 
         private void editBTN_Click(object sender, RoutedEventArgs e)
         {
+            if (NameTbx.Text.Length != 0 &&
+                ArticleTbx.Text.Length != 0 &&
+                MinCostForAgentTbx.Text.Length != 0 &&
+                ProductTypeCbx.SelectedItem != null &&
+                ProductionPersonCountTbx.Text.Length != 0 &&
+                ProductionWorkshopNumberTbx.Text.Length != 0)
+            {
+                App.selectedProduct.Name = NameTbx.Text;
+                App.selectedProduct.Article = ArticleTbx.Text;
+                App.selectedProduct.MinCost = int.Parse(MinCostForAgentTbx.Text);
+                App.selectedProduct.IdType = (ProductTypeCbx.SelectedItem as TypeProduct).ID;
+                App.selectedProduct.CountPeople = int.Parse(ProductionPersonCountTbx.Text);
+                App.selectedProduct.Workshop = int.Parse(ProductionWorkshopNumberTbx.Text);
+                App.db.SaveChanges();
+                NavigationService.Navigate(new ProductListPage());
+            }
+            else
+            {
+                MessageBox.Show("Введите данные!");
+            }
+        }
 
+        void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        void textBox_PreviewTextDigitInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
